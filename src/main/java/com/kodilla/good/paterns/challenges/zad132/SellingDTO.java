@@ -2,9 +2,9 @@ package com.kodilla.good.paterns.challenges.zad132;
 
 public class SellingDTO {
 
-    User user;
-    Product product;
-    boolean isSold;
+    private User user;
+    private Product product;
+    private boolean isSold;
 
     public SellingDTO(User user, Product product, boolean isSold) {
         this.user = user;
