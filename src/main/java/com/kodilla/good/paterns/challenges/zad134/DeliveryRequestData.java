@@ -7,7 +7,7 @@ public class DeliveryRequestData {
     public DeliveryRequest data () {
 
         Customer customer = new Customer ("Dan McDan", "kiele Paczesiów");
-        OrderList orderList = new OrderList();
+        OrderList orderList = new OrderList("Ice salad");
         LocalDateTime deliveryDate = LocalDateTime.of(2020,02,20,16,00);
 
         return new DeliveryRequest(customer, orderList, deliveryDate);
