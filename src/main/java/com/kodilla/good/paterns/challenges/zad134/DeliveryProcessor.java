@@ -2,37 +2,30 @@ package com.kodilla.good.paterns.challenges.zad134;
 
 public class DeliveryProcessor {
 
-    private OrderToShopsService orderToShopsService;
+
     private InformationService informationService;
     private DeliveryService deliveryService;
     private SystemRepository systemRepository;
 
-    public DeliveryProcessor( final OrderToShopsService orderToShopsService, final InformationService informationService, final DeliveryService deliveryService, final SystemRepository systemRepository) {
+    public DeliveryProcessor(final InformationService informationService, final DeliveryService deliveryService, final SystemRepository systemRepository) {
 
-        this.orderToShopsService = orderToShopsService;
+
         this.informationService = informationService;
         this.deliveryService = deliveryService;
         this.systemRepository = systemRepository;
     }
 
-    public deliveringDTO process (DeliveryRequest deliveryRequest) {
+    public DeliveryDTO process (DeliveryRequest deliveryRequest) {
 
-        boolean isDelivered = DeliveryService.delivery();
+        boolean isDelivered = deliveryService.delivery(deliveryRequest.getCustomer(),deliveryRequest.getDeliveryDate(), deliveryRequest.getOrderList());
 
         if (isDelivered) {
-
-
+            informationService.sendInformation(deliveryRequest.getCustomer());
+            systemRepository.createDeliveryRepository(deliveryRequest.getCustomer(), deliveryRequest.getOrderList(), deliveryRequest.getDeliveryDate());
+            return new DeliveryDTO(deliveryRequest.getCustomer(),deliveryRequest.getOrderList(), true);
 
         } else {
-
-
-
+            return new DeliveryDTO(deliveryRequest.getCustomer(),deliveryRequest.getOrderList(), false);
         }
-
-
-
-
     }
-
-
 }

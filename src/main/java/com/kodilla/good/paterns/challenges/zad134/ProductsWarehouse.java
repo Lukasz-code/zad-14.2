@@ -5,23 +5,23 @@ import java.util.Map;
 
 public class ProductsWarehouse {
 
-    public Map<ProductsRepository, ShopsRepository> ProductsToChoose () {
+    public Map<Product, Shop> productsToChoose () {
 
-        ShopsRepository shop1 = new ShopsRepository(" ExtraFoodShop");
-        ShopsRepository shop2 = new ShopsRepository("HealthyShop");
-        ShopsRepository shop3 = new ShopsRepository("GlutenFreeShop");
+        Shop shop1 = new Shop(" ExtraFoodShop");
+        Shop shop2 = new Shop("HealthyShop");
+        Shop shop3 = new Shop("GlutenFreeShop");
 
-        ProductsRepository salad = new ProductsRepository("Eco Salad");
-        ProductsRepository tomatoe = new ProductsRepository("Eco Tomatoe");
-        ProductsRepository potatoe = new ProductsRepository("Eco Potatoe");
-        ProductsRepository bread = new ProductsRepository("Gluten Free Bread");
-        ProductsRepository flour = new ProductsRepository("Gluten Free Flour");
-        ProductsRepository biscuits = new ProductsRepository("Gluten Free Biscuits");
-        ProductsRepository yogurt = new ProductsRepository("0% fat yogurt");
-        ProductsRepository cheese = new ProductsRepository("fat free cheese");
-        ProductsRepository milk = new ProductsRepository("0% fat milk");
+        Product salad = new Product("Eco Salad");
+        Product tomatoe = new Product("Eco Tomatoe");
+        Product potatoe = new Product("Eco Potatoe");
+        Product bread = new Product("Gluten Free Bread");
+        Product flour = new Product("Gluten Free Flour");
+        Product biscuits = new Product("Gluten Free Biscuits");
+        Product yogurt = new Product("0% fat yogurt");
+        Product cheese = new Product("fat free cheese");
+        Product milk = new Product("0% fat milk");
 
-        Map<ProductsRepository, ShopsRepository> productsToChoose = new HashMap<>();
+        Map<Product, Shop> productsToChoose = new HashMap<>();
 
         productsToChoose.put(salad, shop1);
         productsToChoose.put(tomatoe, shop1);

@@ -1,18 +1,18 @@
 package com.kodilla.good.paterns.challenges.zad134;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderList {
 
-String productName;
-Integer amount;
+    private List<Product> customerOrder = new ArrayList<>();
 
-    public OrderList(String productName) {
-        this.productName = productName;
+    public void add (Product product) {
 
+        customerOrder.add(product);
     }
 
-    public String getProductName() {
-        return productName;
+    public List<Product> getCustomerOrder() {
+        return customerOrder;
     }
-
-
 }
