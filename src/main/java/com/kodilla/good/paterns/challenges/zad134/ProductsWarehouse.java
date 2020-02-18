@@ -5,23 +5,23 @@ import java.util.Map;
 
 public class ProductsWarehouse {
 
-    public Map<Product, Shop> productsToChoose () {
+    public Map<Product, ShopService> productsToChoose () {
 
-        Shop shop1 = new Shop(" ExtraFoodShop");
-        Shop shop2 = new Shop("HealthyShop");
-        Shop shop3 = new Shop("GlutenFreeShop");
+        ShopService shop1 = new ExtraFoodShop();
+        ShopService shop2 = new HealthyShop();
+        ShopService shop3 = new GlutenFreeShop();
 
-        Product salad = new Product("Eco Salad");
-        Product tomatoe = new Product("Eco Tomatoe");
-        Product potatoe = new Product("Eco Potatoe");
-        Product bread = new Product("Gluten Free Bread");
-        Product flour = new Product("Gluten Free Flour");
-        Product biscuits = new Product("Gluten Free Biscuits");
-        Product yogurt = new Product("0% fat yogurt");
-        Product cheese = new Product("fat free cheese");
-        Product milk = new Product("0% fat milk");
+        Product salad = new Product("Eco Salad", 2);
+        Product tomatoe = new Product("Eco Tomatoe", 2);
+        Product potatoe = new Product("Eco Potatoe",3);
+        Product bread = new Product("Gluten Free Bread",50);
+        Product flour = new Product("Gluten Free Flour",1);
+        Product biscuits = new Product("Gluten Free Biscuits",20);
+        Product yogurt = new Product("0% fat yogurt",5);
+        Product cheese = new Product("fat free cheese",7);
+        Product milk = new Product("0% fat milk",5);
 
-        Map<Product, Shop> productsToChoose = new HashMap<>();
+        Map<Product, ShopService> productsToChoose = new HashMap<>();
 
         productsToChoose.put(salad, shop1);
         productsToChoose.put(tomatoe, shop1);

@@ -7,13 +7,9 @@ public class Delivery implements DeliveryService {
     private ProductsWarehouse productsWarehouse;
 
     public Delivery(ProductsWarehouse productsWarehouse) {
-
         this.productsWarehouse = productsWarehouse;
     }
 
-    public Delivery() {
-
-    }
 
     @Override
     public boolean delivery(Customer customer, LocalDateTime deliveryDate, OrderList orderList) {
@@ -22,13 +18,12 @@ public class Delivery implements DeliveryService {
 
             if (productsWarehouse.productsToChoose().containsKey(product)) {
 
-                Shop shop = productsWarehouse.productsToChoose().get(product);
-                System.out.println("działa");
+                ShopService shopService = productsWarehouse.productsToChoose().get(product);
 
-//               shop.
-                return true;
+               shopService.process(product);
+
             }
         }
-        return false;
+        return true;
     }
 }
