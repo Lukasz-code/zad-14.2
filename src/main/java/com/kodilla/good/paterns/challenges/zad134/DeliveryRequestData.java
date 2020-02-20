@@ -8,7 +8,7 @@ public class DeliveryRequestData {
 
         Customer customer = new Customer ("Dan McDan", "kiele Paczesiów");
         OrderList orderList = new OrderList();
-        orderList.add(new Product("salad", 1));
+        orderList.add(new Product("Eco Salad", 1));
         orderList.add(new Product("Gluten Free Bread",2));
         orderList.add(new Product("fat free cheese",1));
 

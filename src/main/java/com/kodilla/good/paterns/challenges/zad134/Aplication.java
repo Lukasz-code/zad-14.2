@@ -6,7 +6,11 @@ public class Aplication {
         DeliveryRequest deliveryRequest = deliveryRequestData.data();
         ProductsWarehouse productsWarehouse = new ProductsWarehouse();
 
-        DeliveryProcessor deliveryProcessor = new DeliveryProcessor(new SendEmail(), new Delivery(productsWarehouse), new DeliveryRepository());
+        DeliveryProcessor deliveryProcessor = new DeliveryProcessor(
+                new SendEmail(),
+                new Delivery(productsWarehouse),
+                new DeliveryRepository());
+
         deliveryProcessor.process(deliveryRequest);
 
     }

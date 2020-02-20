@@ -8,8 +8,8 @@ public class ProductsWarehouse {
     public Map<Product, ShopService> productsToChoose () {
 
         ShopService shop1 = new ExtraFoodShop();
-        ShopService shop2 = new HealthyShop();
-        ShopService shop3 = new GlutenFreeShop();
+        ShopService shop3 = new HealthyShop();
+        ShopService shop2 = new GlutenFreeShop();
 
         Product salad = new Product("Eco Salad", 2);
         Product tomatoe = new Product("Eco Tomatoe", 2);
