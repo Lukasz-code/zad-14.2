@@ -1,38 +1,44 @@
 package com.kodilla.good.paterns.challenges.zad135;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlightReservation {
 
-    private ReservationRequest reservationRequest;
-
-    public FlightReservation(ReservationRequest reservationRequest) {
-        this.reservationRequest = reservationRequest;
-    }
-
-    public String questionFrom(){
+    public List<Flight> questionFrom(String from){
 
         FlightDataBase.flightDataBase().stream()
-                .filter(flight -> flight.equals(reservationRequest.getFlight().getFrom()))
+                .filter(flight -> flight.getFrom().equals(from))
                 .forEach(System.out::println);
 
-        return new String();
+        return new ArrayList<>();
     }
 
-    public String questionTo(){
+         public List<Flight> questionTo(String to){
 
         FlightDataBase.flightDataBase().stream()
-                .filter(flight -> flight.equals(reservationRequest.getFlight().getTo()))
+                .filter(flight -> flight.getTo().equals(to))
                 .forEach(System.out::println);
 
-        return new String();
+        return new ArrayList<>();
     }
 
-    public String questionThrough(){
+    public List<Flight> questionThrough(String from, String to){
 
-        FlightDataBase.flightDataBase().stream()
-                .filter(flight -> flight.equals(reservationRequest.getFlight().getFrom()) || flight.equals(reservationRequest.getFlight().getTo()))
-                .filter(flight -> flight.equals(reservationRequest.getFlight().getTo()) == flight.equals(reservationRequest.getFlight().getTo()))
-                .forEach(System.out::println);
+        List<Flight> flights = questionFrom(from);
+        List<Flight> flights1 = questionTo(to);
 
-        return new String();
+        List<Flight> flightsThrough = new ArrayList<>();
+
+        for (Flight fromFlight : flights)
+            for (Flight toFlight: flights1)
+
+                if (fromFlight.getTo().equals(toFlight.getFrom())) {
+
+                    flightsThrough.add(fromFlight);
+                    flightsThrough.add(toFlight);
+                }
+
+        return flightsThrough;
     }
 }

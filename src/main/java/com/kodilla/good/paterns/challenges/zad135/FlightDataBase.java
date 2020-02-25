@@ -7,15 +7,15 @@ public class FlightDataBase {
 
     public static Set<Flight> flightDataBase() {
 
-        Flight Bydgoszcz1 = new Flight("Bydgoszcz", "Gdańsk");
-        Flight Bydgoszcz2 = new Flight("Bydgoszcz", "Kraków");
-        Flight Bydgoszcz3 = new Flight("Bydgoszcz", "Poznań");
-        Flight Gdańsk1 = new Flight("Gdańsk", "Warszawa");
-        Flight Gdańsk2 = new Flight("Gdańsk", "Lublin");
-        Flight Gdańsk3 = new Flight("Gdańsk", "Wrocław");
-        Flight Warszawa1 = new Flight("Warszawa","Wrocław");
+        Flight Bydgoszcz1 = new Flight("Bydgoszcz", "Gdansk");
+        Flight Bydgoszcz2 = new Flight("Bydgoszcz", "Krakow");
+        Flight Bydgoszcz3 = new Flight("Bydgoszcz", "Poznan");
+        Flight Gdańsk1 = new Flight("Gdansk", "Warszawa");
+        Flight Gdańsk2 = new Flight("Gdansk", "Lublin");
+        Flight Gdańsk3 = new Flight("Gdansk", "Wroclaw");
+        Flight Warszawa1 = new Flight("Warszawa","Wroclaw");
         Flight Warszawa2 = new Flight("Warszawa","Bydgoszcz");
-        Flight Warszawa3 = new Flight("Warszawa","Lublin");
+        Flight Warszawa3 = new Flight("Warszawa","Gdansk");
 
         Set<Flight> DataBase = new HashSet<>();
 
