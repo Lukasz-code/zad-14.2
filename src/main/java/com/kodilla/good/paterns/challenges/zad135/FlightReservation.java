@@ -2,25 +2,29 @@ package com.kodilla.good.paterns.challenges.zad135;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FlightReservation {
 
     public List<Flight> questionFrom(String from){
 
-        FlightDataBase.flightDataBase().stream()
+        List<Flight> fromList = FlightDataBase.flightDataBase().stream()
                 .filter(flight -> flight.getFrom().equals(from))
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+        for (Flight toFlights : fromList)
+            System.out.println(toFlights);
 
-        return new ArrayList<>();
+        return fromList;
     }
 
          public List<Flight> questionTo(String to){
 
-        FlightDataBase.flightDataBase().stream()
+        List <Flight> toList = FlightDataBase.flightDataBase().stream()
                 .filter(flight -> flight.getTo().equals(to))
-                .forEach(System.out::println);
-
-        return new ArrayList<>();
+                .collect(Collectors.toList());
+        for (Flight toFlights : toList)
+            System.out.println(toFlights);
+        return toList;
     }
 
     public List<Flight> questionThrough(String from, String to){

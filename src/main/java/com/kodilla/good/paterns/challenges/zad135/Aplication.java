@@ -4,8 +4,8 @@ public class Aplication {
     public static void main(String[] args) {
 
        FlightReservation flightReservation = new FlightReservation();
-       flightReservation.questionFrom("Warszawa");
-       flightReservation.questionTo("Lublin");
+       flightReservation.questionFrom("Bydgoszcz");
+       flightReservation.questionTo("Warszawa");
        flightReservation.questionThrough("Warszawa", "Lublin");
     }
 }
