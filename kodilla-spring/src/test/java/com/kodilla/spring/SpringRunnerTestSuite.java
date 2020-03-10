@@ -40,6 +40,7 @@ public class SpringRunnerTestSuite {
         //Then
         Assert.assertEquals("This is a triangle.", name);
     }
+
     @Test
     public void testSquareLoadedIntoContainer() {
         //Given

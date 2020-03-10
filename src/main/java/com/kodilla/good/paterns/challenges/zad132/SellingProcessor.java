@@ -6,13 +6,13 @@ public class SellingProcessor {
     private SellRepository sellRepository;
     private SellService sellService;
 
-    public SellingProcessor(final InformationService informationService, final SellRepository sellRepository,final SellService sellService) {
+    public SellingProcessor(final InformationService informationService, final SellRepository sellRepository, final SellService sellService) {
         this.informationService = informationService;
         this.sellRepository = sellRepository;
         this.sellService = sellService;
     }
 
-    public SellingDTO process (final SellRequest sellRequest) {
+    public SellingDTO process(final SellRequest sellRequest) {
 
         boolean isSold = sellService.sell(sellRequest.getUser(), sellRequest.getBuyDate(), sellRequest.getDeliveryDate(), sellRequest.getProduct());
 

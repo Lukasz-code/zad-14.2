@@ -20,7 +20,7 @@ public class Delivery implements DeliveryService {
 
                 ShopService shopService = productsWarehouse.productsToChoose().get(product);
 
-               shopService.process(product);
+                shopService.process(product);
 
             }
         }

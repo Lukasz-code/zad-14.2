@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class FlightReservation {
 
-    public List<Flight> questionFrom(String from){
+    public List<Flight> questionFrom(String from) {
 
         List<Flight> fromList = FlightDataBase.flightDataBase().stream()
                 .filter(flight -> flight.getFrom().equals(from))
@@ -17,9 +17,9 @@ public class FlightReservation {
         return fromList;
     }
 
-         public List<Flight> questionTo(String to){
+    public List<Flight> questionTo(String to) {
 
-        List <Flight> toList = FlightDataBase.flightDataBase().stream()
+        List<Flight> toList = FlightDataBase.flightDataBase().stream()
                 .filter(flight -> flight.getTo().equals(to))
                 .collect(Collectors.toList());
         for (Flight toFlights : toList)
@@ -27,7 +27,7 @@ public class FlightReservation {
         return toList;
     }
 
-    public List<Flight> questionThrough(String from, String to){
+    public List<Flight> questionThrough(String from, String to) {
 
         List<Flight> flights = questionFrom(from);
         List<Flight> flights1 = questionTo(to);
@@ -35,7 +35,7 @@ public class FlightReservation {
         List<Flight> flightsThrough = new ArrayList<>();
 
         for (Flight fromFlight : flights)
-            for (Flight toFlight: flights1)
+            for (Flight toFlight : flights1)
 
                 if (fromFlight.getTo().equals(toFlight.getFrom())) {
 

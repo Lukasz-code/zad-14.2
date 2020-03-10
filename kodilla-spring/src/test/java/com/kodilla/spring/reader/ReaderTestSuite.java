@@ -7,13 +7,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class ReaderTestSuite {
     @Test
-    public  void testRead(){
+    public void testRead() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(ReaderConfig.class);
         Reader reader = context.getBean(Reader.class);
         //When & then
         reader.read();
     }
+
     @Test
     public void testConditional() {
         //Given

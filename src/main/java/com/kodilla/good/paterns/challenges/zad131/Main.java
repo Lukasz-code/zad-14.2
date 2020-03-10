@@ -7,7 +7,7 @@ public class Main {
         MovieStore movieStore = new MovieStore();
         String moviesString = movieStore.getMovies().entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
-                .collect(Collectors.joining(" ! "," "," "));
+                .collect(Collectors.joining(" ! ", " ", " "));
 
         System.out.println(moviesString);
     }

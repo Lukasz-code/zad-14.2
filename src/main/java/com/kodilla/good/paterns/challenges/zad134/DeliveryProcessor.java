@@ -15,17 +15,17 @@ public class DeliveryProcessor {
         this.systemRepository = systemRepository;
     }
 
-    public DeliveryDTO process (DeliveryRequest deliveryRequest) {
+    public DeliveryDTO process(DeliveryRequest deliveryRequest) {
 
-        boolean isDelivered = deliveryService.delivery(deliveryRequest.getCustomer(),deliveryRequest.getDeliveryDate(), deliveryRequest.getOrderList());
+        boolean isDelivered = deliveryService.delivery(deliveryRequest.getCustomer(), deliveryRequest.getDeliveryDate(), deliveryRequest.getOrderList());
 
         if (isDelivered) {
             informationService.sendInformation(deliveryRequest.getCustomer());
             systemRepository.createDeliveryRepository(deliveryRequest.getCustomer(), deliveryRequest.getOrderList(), deliveryRequest.getDeliveryDate());
-            return new DeliveryDTO(deliveryRequest.getCustomer(),deliveryRequest.getOrderList(), true);
+            return new DeliveryDTO(deliveryRequest.getCustomer(), deliveryRequest.getOrderList(), true);
 
         } else {
-            return new DeliveryDTO(deliveryRequest.getCustomer(),deliveryRequest.getOrderList(), false);
+            return new DeliveryDTO(deliveryRequest.getCustomer(), deliveryRequest.getOrderList(), false);
         }
     }
 }

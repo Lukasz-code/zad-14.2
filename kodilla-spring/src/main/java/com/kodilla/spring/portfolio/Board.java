@@ -11,16 +11,18 @@ public class Board {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
+
     }
 
-    public void displayToDo (TaskList toDoList) {
-        System.out.println("TO do list: " + toDoList);
-    }
-    public void displayInProgress (TaskList inProgressList) {
-        System.out.println("In progress list: " + inProgressList);
-    }
-     public void displayDone(TaskList doneList) {
-        System.out.println("Done list: " + doneList);
+    public void addToToDoList(String task) {
+        toDoList.addTasks(task);
     }
 
+    public void addToInProgressList(String task) {
+        inProgressList.addTasks(task);
+    }
+
+    public void addToDoneList(String task) {
+        doneList.addTasks(task);
+    }
 }

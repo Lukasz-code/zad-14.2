@@ -3,7 +3,7 @@ package com.kodilla.good.paterns.challenges.zad134;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlutenFreeShop implements ShopService{
+public class GlutenFreeShop implements ShopService {
     @Override
     public Map<String, Integer> stanMagazynowy() {
 

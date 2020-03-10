@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public final class MovieStore {
-    public  Map<String, List<String>> getMovies() {
+    public Map<String, List<String>> getMovies() {
 
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");
