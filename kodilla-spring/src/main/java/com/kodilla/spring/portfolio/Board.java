@@ -25,4 +25,14 @@ public class Board {
     public void addToDoneList(String task) {
         doneList.addTasks(task);
     }
+
+    public boolean taskCheckToDo (String task) {
+        return toDoList.getAddTasks().contains(task);
+    }
+    public boolean taskCheckIn (String task) {
+        return inProgressList.getAddTasks().contains(task);
+    }
+    public boolean taskCheckDone (String task) {
+        return doneList.getAddTasks().contains(task);
+    }
 }

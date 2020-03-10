@@ -1,5 +1,6 @@
 package com.kodilla.spring.portfolio;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,8 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class BoardTestSuite {
 
-    private TaskList taskList;
-
     @Test
     public void testTaskAdd() {
         //Given
@@ -20,14 +19,15 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
         //When
-        board.addToDoneList("Task to do");
+        board.addToToDoList("Task to do");
         board.addToInProgressList("Task in progress");
         board.addToDoneList("Task done");
         //Then
-        for (String task : toDoList) {
-            if (task.equals("Task to do"))
-                return true;
 
-        }
+    Assert.assertTrue("Task to do", board.taskCheckToDo("Task to do"));
+    Assert.assertTrue("Task in progress", board.taskCheckIn("Task in progress"));
+    Assert.assertTrue("Task done", board.taskCheckDone("Task done"));
+
+    }
 
     }
