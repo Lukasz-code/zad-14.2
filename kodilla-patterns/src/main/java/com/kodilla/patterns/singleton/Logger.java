@@ -4,7 +4,7 @@ public class Logger {
     private static Logger loggerInstance = null;
     private String lastLog = "";
 
-    Logger(){
+    private Logger(){
     }
 
     static Logger getInstance() {
