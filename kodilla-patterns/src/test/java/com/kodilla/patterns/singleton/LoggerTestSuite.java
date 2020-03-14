@@ -5,15 +5,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    private static Logger logger;
 
     @BeforeClass
     public static void openLog () {
         Logger.getInstance().log("cos.tam");
-    }
-
-    private static Logger logger() {
-        return logger;
     }
     @Test
     public void testLog() {
