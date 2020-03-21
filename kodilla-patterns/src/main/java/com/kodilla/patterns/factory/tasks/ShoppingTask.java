@@ -4,18 +4,19 @@ public class ShoppingTask implements Task {
     private final String taskName;
     private final String whatToBuy;
     private final double quantity;
-    private final boolean isExecuted;
+    private boolean isExecuted;
 
-    public ShoppingTask(final String taskName,final String whatToBuy,final double quantity,final boolean isExecuted) {
+    public ShoppingTask(final String taskName,final String whatToBuy,final double quantity) {
         this.taskName = taskName;
         this.whatToBuy = whatToBuy;
         this.quantity = quantity;
-        this.isExecuted = isExecuted;
+
     }
 
     @Override
-    public String executeTask() {
-        return ("Task: " + taskName + whatToBuy + "in quantity of: " + quantity);
+    public void executeTask() {
+        System.out.println("Task: " + taskName + whatToBuy + "in quantity of: " + quantity);
+        isExecuted = true;
     }
 
     @Override
@@ -26,7 +27,11 @@ public class ShoppingTask implements Task {
     @Override
     public boolean isTaskExecuted() {
         if (isExecuted) {
+            System.out.println("Shopping done!");
             return true;
-        } else return false;
+        } else {
+            System.out.println("Shopping in progress");
+            return false;
+        }
     }
 }

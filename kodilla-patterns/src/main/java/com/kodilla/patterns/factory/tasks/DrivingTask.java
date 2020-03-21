@@ -4,18 +4,19 @@ public class DrivingTask implements Task{
     private final String taskName;
     private final String where;
     private final String using;
-    private final boolean isExecuted;
+    private boolean isExecuted;
 
-    public DrivingTask(String taskName, String where, String using, boolean isExecuted) {
+    public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
-        this.isExecuted = isExecuted;
+
     }
 
     @Override
-    public String executeTask() {
-        return ("Task: " + taskName + " with: " + using + " to: " + where);
+    public void executeTask() {
+        System.out.println ("Task: " + taskName + " with: " + using + " to: " + where + isExecuted);
+        isExecuted = true;
     }
 
     @Override
