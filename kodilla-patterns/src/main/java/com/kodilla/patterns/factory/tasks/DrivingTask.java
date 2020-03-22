@@ -6,16 +6,15 @@ public class DrivingTask implements Task{
     private final String using;
     private boolean isExecuted;
 
-    public DrivingTask(String taskName, String where, String using) {
+    public DrivingTask(final String taskName,final String where,final String using) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
-
     }
 
     @Override
     public void executeTask() {
-        System.out.println ("Task: " + taskName + " with: " + using + " to: " + where + isExecuted);
+        System.out.println ("Task: " + taskName + " with: " + using + " to: " + where);
         isExecuted = true;
     }
 
@@ -26,8 +25,6 @@ public class DrivingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        if (isExecuted) {
-            return true;
-        } else return false;
+      return isExecuted;
     }
 }

@@ -26,12 +26,6 @@ public class ShoppingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        if (isExecuted) {
-            System.out.println("Shopping done!");
-            return true;
-        } else {
-            System.out.println("Shopping in progress");
-            return false;
-        }
+        return isExecuted;
     }
 }
