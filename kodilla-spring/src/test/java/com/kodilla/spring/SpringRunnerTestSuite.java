@@ -26,7 +26,7 @@ public class SpringRunnerTestSuite {
         //When
         String name = shape.getShapeName();
         //Then
-        Assert.assertEquals("This is a circle.", name);
+        Assert.assertEquals("Tis is a circle", name);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class SpringRunnerTestSuite {
         //When
         String name = shape.getShapeName();
         //Then
-        Assert.assertEquals("This is a triangle.", name);
+        Assert.assertEquals("This is a triangle", name);
     }
 
     @Test
@@ -50,6 +50,6 @@ public class SpringRunnerTestSuite {
         //When
         String name = shape.getShapeName();
         //Then
-        Assert.assertEquals("This is a squere.", name);
+        Assert.assertEquals("This is a squere", name);
     }
 }
