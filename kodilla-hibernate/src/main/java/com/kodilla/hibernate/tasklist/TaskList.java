@@ -45,4 +45,13 @@ public class TaskList {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "TaskList{" +
+                "id=" + id +
+                ", listName='" + listName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

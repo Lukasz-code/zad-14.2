@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TaskListDaoTestSuite {
@@ -29,10 +31,9 @@ public class TaskListDaoTestSuite {
         List<TaskList> readTaskList = taskListDao.findByListName(listName);
 
         //Then
-        Assert.assertTrue(readTaskList.contains(listName));
+        Assert.assertEquals(1, readTaskList.size());
 
-        //
-
-
+        //Clean up
+        taskListDao.delete(taskList);
     }
 }
