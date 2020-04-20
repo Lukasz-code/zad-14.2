@@ -48,7 +48,7 @@ public class InvoiceDaoTestSuite {
 
         //When
 
-        invoiceDao.save(invoice);
+//        invoiceDao.save(invoice);
 
     }
 }
