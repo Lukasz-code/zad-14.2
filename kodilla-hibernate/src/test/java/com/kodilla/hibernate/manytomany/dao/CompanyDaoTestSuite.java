@@ -50,11 +50,11 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        List<Company> lookingForCompanyName = companyDao.lookingForCompanyName();
-        List<Employee> retriveLastName = employeeDao.retriveLastName();
+        List<Company> lookingForCompanyName = companyDao.lookingForCompanyName("sof%");
+        List<Employee> retrieveLastName = employeeDao.retrieveLastName("Smith");
 
         //Then
-        Assert.assertEquals(1,retriveLastName.size());
+        Assert.assertEquals(1,retrieveLastName.size());
         Assert.assertEquals(1,lookingForCompanyName.size());
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);

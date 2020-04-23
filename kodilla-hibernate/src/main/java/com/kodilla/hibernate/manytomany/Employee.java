@@ -7,8 +7,8 @@ import java.util.List;
 
 
 @NamedQuery(
-        name = "Employee.retriveLastName",
-        query = "FROM Employee WHERE lastname = 'Smith' "
+        name = "Employee.retrieveLastName",
+        query = "FROM Employee WHERE lastname =:param "
         )
 @Entity
 @Table(name = "EMPLOYEES")

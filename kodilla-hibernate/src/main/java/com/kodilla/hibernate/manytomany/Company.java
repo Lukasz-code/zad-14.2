@@ -7,7 +7,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name ="Company.lookingForCompanyName",
-        query ="SELECT * FROM COMPANIES WHERE COMPANY_NAME ='So%'"
+        query ="SELECT * FROM COMPANIES WHERE COMPANY_NAME = CONCAT(:param,'%')",
+        resultClass = Company.class
 )
 
 @Entity

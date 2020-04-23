@@ -3,6 +3,7 @@ package com.kodilla.hibernate.invoice.dao;
 import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
 @SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
-    InvoiceDao invoiceDao;
+    private InvoiceDao invoiceDao;
 
     @Test
     public void testInvoiceDaoSave(){
@@ -31,24 +32,31 @@ public class InvoiceDaoTestSuite {
         Item item2 = new Item(new BigDecimal(3),3 ,new BigDecimal(3));
         Item item3 = new Item(new BigDecimal(2),2,new BigDecimal(2));
 
-        item.getProducts().add(product);
-        item.getProducts().add(product2);
-
-        item2.getProducts().add(product2);
-        item2.getProducts().add(product3);
-
-        item3.getProducts().add(product3);
-        item3.getProducts().add(product);
+        product.getItemList().add(item);
+        item.setProduct(product);
+        product2.getItemList().add(item2);
+        item2.setProduct(product2);
+        product3.getItemList().add(item3);
+        item3.setProduct(product3);
 
         Invoice invoice = new Invoice("01/19/04/2020");
-        invoice.getItems().add(item);
-        invoice.getItems().add(item2);
-        invoice.getItems().add(item3);
 
+        invoice.getItems().add(item);
+        item.setInvoice(invoice);
+
+        invoice.getItems().add(item2);
+        item2.setInvoice(invoice);
+
+        invoice.getItems().add(item3);
+        item3.setInvoice(invoice);
 
         //When
+        invoiceDao.save(invoice);
+        int id = invoice.getId();
 
-//        invoiceDao.save(invoice);
+
+      //Then
+        Assert.assertEquals(3,invoice.getItems().size());
 
     }
 }
