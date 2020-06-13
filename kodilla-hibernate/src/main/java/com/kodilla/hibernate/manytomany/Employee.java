@@ -1,5 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.List;
         name = "Employee.retrieveLastName",
         query = "FROM Employee WHERE lastname =:param "
         )
+@Service
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
